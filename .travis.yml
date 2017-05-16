@@ -13,3 +13,12 @@ mysql:
   database: travis_ci_drubone
   username: root
   encoding: utf8
+
+install:
+  - cd $TRAVIS_BUILD_DIR/../
+  - curl https://ftp.drupal.org/files/projects/drupal-7.54.tar.gz | tar -xz
+  - mv drupal-7.54 drupal7
+  - cd $TRAVIS_BUILD_DIR
+
+script:
+  - ls $TRAVIS_BUILD_DIR/../drupal7
